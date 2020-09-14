@@ -16,7 +16,7 @@ public class Conector {
 	/**
 	 * Constante que reprsenta la URL de la base de datos
 	 */
-	public static final String URL = "jdbc:mysql://localhost:3306/libreria";
+	public static final String URL = "jdbc:mysql://localhost:3306/Libreria";
 	/**
 	 * Constante que reprsenta el usuario de la base de datos
 	 */

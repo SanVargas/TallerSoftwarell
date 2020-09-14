@@ -1,11 +1,11 @@
 package modelo.controladoresEntidades;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import app.TallerSoftwareII;
+import util.Util;
 
 public class ControladorProducto {
 
@@ -33,10 +33,7 @@ public class ControladorProducto {
 			pst.setString(2, numeroCalificaciones.toString());
 			pst.setString(3, calificacion.toString());
 			pst.execute();
-			ResultSet rs = pst.getGeneratedKeys();
-			if (rs != null && rs.next()) {
-			    return rs.getLong(1);
-			}
+			return Util.obtenerIdGenerado(pst);
 		} catch (SQLException e) {
 			System.out.println("Ocurrió un error al insertar el producto" + e.getMessage());
 		}

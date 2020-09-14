@@ -1,11 +1,11 @@
 package modelo.controladoresEntidades;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import app.TallerSoftwareII;
+import util.Util;
 
 /**
  * 
@@ -25,10 +25,7 @@ public class ControladorResena {
 			pst.setString(2, resena);
 			pst.setString(3, idLibro.toString());
 			pst.execute();
-			ResultSet rs = pst.getGeneratedKeys();
-			if (rs != null && rs.next()) {
-			    return rs.getLong(1);
-			}
+			return Util.obtenerIdGenerado(pst);
 		} catch (SQLException e) {
 			System.out.println("Ocurrió un error al insertar el producto" + e.getMessage());
 		}

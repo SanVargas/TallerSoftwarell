@@ -1,12 +1,12 @@
 package modelo.controladoresEntidades;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import app.TallerSoftwareII;
+import util.Util;
 
 /**
  * 
@@ -45,9 +45,9 @@ public class ControladorAutor {
 				PreparedStatement pst = TallerSoftwareII.conector.prepareStatement(SQL,Statement.RETURN_GENERATED_KEYS);
 				pst.setString(1, nombre.toUpperCase());
 				pst.execute();
-				ResultSet rs = pst.getGeneratedKeys();
-				if (rs != null && rs.next()) {
-					idsAutores.add(rs.getLong(1));
+				Long idAutor = Util.obtenerIdGenerado(pst);
+				if (idAutor != null) {
+					idsAutores.add(idAutor);
 				}
 			}
 		} catch (SQLException e) {

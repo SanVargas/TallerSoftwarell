@@ -1,11 +1,11 @@
 package modelo.controladoresEntidades;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import app.TallerSoftwareII;
+import util.Util;
 
 /**
  * 
@@ -36,9 +36,8 @@ public class ControladorLibro {
 			pst.setString(2, isbn.toString());
 			pst.setString(3, idProducto.toString());
 			pst.execute();
-			ResultSet rs = pst.getGeneratedKeys();
-			if (rs != null && rs.next()) {
-				idLibro = rs.getLong(1);
+			idLibro = Util.obtenerIdGenerado(pst);
+			if (idLibro != null) {
 				for(Long idAutor: idsAutores) {
 					SQL = "INSERT INTO libro_autor (idLibro,idAutor) values (?,?)";
 					pst = TallerSoftwareII.conector.prepareStatement(SQL);

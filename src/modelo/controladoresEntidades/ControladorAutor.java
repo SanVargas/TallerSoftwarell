@@ -12,8 +12,9 @@ import util.Util;
  * 
  * <b>Descripción:<b> Clase encargada de manejar la lógica de la entidad Autor
  * <b>Caso de Uso:<b> 
- * @author 
- * @author 
+ * @author Lissette Quebrada
+ * @author Santiago Vargas
+ * @author Santiago Lopez 
  * @author Francisco Alejandro Hoyos Rojas
  * @version 1.0
  */

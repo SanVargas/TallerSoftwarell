@@ -1,5 +1,7 @@
 package modelo.entidad;
 
+import java.util.ArrayList;
+
 /**
  * <b>Descripción:<b> Clase que representa la entidad Autor
  * @author 
@@ -8,55 +10,40 @@ package modelo.entidad;
  * @version 1.0
  */
 public class Autor {
-	/**
-	 * Atributo que representa el id del autor
-	 */
-	private Long idAutor;
 	
-	/**
-	 * Atriburo que representa el nombre del autor
-	 */
+	private String idAutor;
 	private String nombreAutor;
+	private ArrayList<Libro> libros;
 	
-	
-	/**
-	 * Constructor de la clase.
-	 * @param idAutor id del autor 
-	 * @param nombreAutor nombre del autor
-	 */
-	public Autor(Long idAutor, String nombreAutor) {
+	public Autor(String idAutor, String nombreAutor, ArrayList<Libro> libros) {
 		super();
 		this.idAutor = idAutor;
 		this.nombreAutor = nombreAutor;
+		this.libros = libros;
 	}
-	
-	/**
-	 * Metodo encargado de retornar el valor del atributo idAutor
-	 * @return El idAutor asociado a la clase
-	 */
-	public Long getIdAutor() {
+
+	public String getIdAutor() {
 		return idAutor;
 	}
-	/**
-	 * Metodo encargado de modificar el valor del atributo idAutor
-	 * @param idAutor El nuevo idAutor a modificar.
-	 */
-	public void setIdAutor(Long idAutor) {
+
+	public void setIdAutor(String idAutor) {
 		this.idAutor = idAutor;
 	}
-	/**
-	 * Metodo encargado de retornar el valor del atributo nombreAutor
-	 * @return El nombreAutor asociado a la clase
-	 */
+
 	public String getNombreAutor() {
 		return nombreAutor;
 	}
-	/**
-	 * Metodo encargado de modificar el valor del atributo nombreAutor
-	 * @param nombreAutor El nuevo nombreAutor a modificar.
-	 */
+
 	public void setNombreAutor(String nombreAutor) {
 		this.nombreAutor = nombreAutor;
 	}
-	
+
+	public ArrayList<Libro> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(ArrayList<Libro> libros) {
+		this.libros = libros;
+	}
+
 }

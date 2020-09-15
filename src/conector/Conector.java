@@ -24,7 +24,7 @@ public class Conector {
 	/**
 	 * Constante que reprsenta la constraseña de la base de datos
 	 */
-	public static final String PASSWORD = "1234";
+	public static final String PASSWORD = "root";
 
 	
 	/**
